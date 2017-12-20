@@ -14,11 +14,9 @@ namespace SupportTeamHotline.Models
 
         public IQueryable<SupportTicket> FindAllSupportTickets()
         {
-            return from supportTicket in db.SupportTickets
-                   orderby supportTicket.TicketDateTime
-                   select supportTicket;
+            return db.SupportTickets;
         }
-
+        
         public SupportTicket GetSupportTicket(int id)
         {
             return db.SupportTickets.SingleOrDefault(d => d.TicketId == id);
@@ -44,8 +42,5 @@ namespace SupportTeamHotline.Models
         {
             db.SubmitChanges();
         }
-
-
-
     }
 }

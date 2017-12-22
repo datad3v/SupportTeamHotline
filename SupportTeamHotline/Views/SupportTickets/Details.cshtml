@@ -1,0 +1,52 @@
+﻿@model SupportTeamHotline.Models.SupportTicket
+
+@{
+                /**/
+
+                ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm())
+{
+    <legend>Fields</legend>
+
+    <div>
+        <p>
+            Support Ticket ID:
+            @Html.Encode(Model.TicketId)
+        </p>
+
+    </div>
+    <br />
+
+    <div>
+        <p>
+            Support Ticket Status:
+            @Html.Encode(Model.TicketStatus)
+        </p>
+
+    </div>
+    <br />
+
+    <div>
+        <p>
+            Which Partner:
+            @Html.Encode(Model.Partner)
+        </p>
+
+    </div>
+    <br />
+
+    <div>
+        <p>
+            Caller First Name:
+            @Html.Encode(Model.CallerFName)
+            Caller Last Name: 
+            @Html.Encode(Model.CallerLName)
+        </p>
+    </div>
+    <br />
+
+}

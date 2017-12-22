@@ -42,5 +42,6 @@ namespace SupportTeamHotline.Models
         {
             db.SubmitChanges();
         }
+
     }
 }

@@ -32,5 +32,53 @@ namespace SupportTeamHotline.Controllers
             else
                 return View("Details", supportTicket);
         }
+
+        //
+        // GET: /SupportTickets/Create
+
+        public ActionResult Create()
+        {
+            
+            SupportTicket supportTicket = new SupportTicket()
+            {
+                
+            };
+
+            return View(supportTicket);
+        }
+
+        //
+        // GET: /SupportTickets/Edit/2
+
+        public ActionResult Edit(int id)
+        {
+            SupportTicket supportTicket = supportTicketRepository.GetSupportTicket(id);
+            return View(supportTicket);
+        }
+
+        //
+        // POST: /SupportTickets/Create
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Create()
+        {
+            SupportTicket supportTicket = new SupportTicket();
+
+            try
+            {
+                UpdateModel(supportTicket);
+
+                supportTicketRepository.Add(supportTicket);
+                supportTicketRepository.Save();
+
+                return RedirectToAction("Details", new { id = supportTicket.TicketId });
+            }
+            catch
+            {
+                //
+                return View(supportTicket);
+            }
+        }
+
     }
 }

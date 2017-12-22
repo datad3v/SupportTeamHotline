@@ -1,0 +1,107 @@
+﻿@model SupportTeamHotline.Models.SupportTicket
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+<div>
+    <p>
+        <label for="TicketId">Ticket ID:</label>
+        @Html.TextBox("TicketId")
+        @Html.ValidationMessage("TicketId", "*")
+    </p>
+    <p>
+        <label for="TicketDateTime">Ticket Date-Time:</label>
+        @Html.TextBox("TicketDateTime")
+        @Html.ValidationMessage("TicketDateTime", "*")
+    </p>
+    <p>
+        <label for="TicketCreator">Support Team Member Submitting this ticket:</label>
+        @Html.TextBox("TicketCreator")
+        @Html.ValidationMessage("TicketCreator", "*")
+    </p>
+    <p>
+        <label for="TicketType">Was this a call or emailed support request?</label>
+        @Html.TextBox("TicketType")
+        @Html.ValidationMessage("TicketType", "*")
+    </p>
+    <p>
+        <label for="TicketStatus">Is this Support Ticket currently resolved/unresolved?</label>
+        @Html.TextBox("TicketStatus")
+        @Html.ValidationMessage("TicketStatus", "*")
+    </p>
+    <p>
+        <label for="Partner">Which partner is requesting support?</label>
+        @Html.TextBox("Partner")
+        @Html.ValidationMessage("Partner", "*")
+    </p>
+    <p>
+        <label for="CallerFname">What is the caller's first name?</label>
+        @Html.TextBox("CallerFname")
+        @Html.ValidationMessage("CallerFname", "*")
+    </p>
+    <p>
+        <label for="CallerLname">What is the caller's last name?</label>
+        @Html.TextBox("CallerLname")
+        @Html.ValidationMessage("CallerLname", "*")
+    </p>
+    <p>
+        <label for="CallerPhone1">What is the caller's phone number?</label>
+        @Html.TextBox("CallerPhone1")
+        @Html.ValidationMessage("CallerPhone1", "*")
+    </p>
+    <p>
+        <label for="CallerEmail1">What is the caller's email?</label>
+        @Html.TextBox("CallerEmail1")
+        @Html.ValidationMessage("CallerEmail1", "*")
+    </p>
+    <p>
+        <label for="TicketDescription">Please enter a description of this support inquiry:</label>
+        @Html.TextBox("TicketDescription")
+        @Html.ValidationMessage("TicketDescription", "*")
+    </p>
+    <p>
+        <label for="TicketResolution">How was this support request resolved:</label>
+        @Html.TextBox("TicketResolution")
+        @Html.ValidationMessage("TicketResolution", "*")
+    </p>
+    <p>
+        <label for="DevSupport">Is Dev Support Required?</label>
+        @Html.TextBox("DevSupport")
+        @Html.ValidationMessage("DevSupport", "*")
+    </p>
+    <p>
+        <label for="TicketResolution">Is this a callback to a voicemail that was left behind?</label>
+        @Html.TextBox("IsCallBack")
+        @Html.ValidationMessage("IsCallBack", "*")
+    </p>
+    <p>
+        <label for="TicketFollowUp">Does this support ticket require a follow-up?</label>
+        @Html.TextBox("TicketFollowUp")
+        @Html.ValidationMessage("TicketFollowUp", "*")
+    </p>
+    <p>
+        <label for="IsCallBack">Is this a callback to a voicemail that was left behind?</label>
+        @Html.TextBox("IsCallBack")
+        @Html.ValidationMessage("IsCallBack", "*")
+    </p>
+    <p>
+        <label for="TicketCategoryId">Support Ticket Category:</label>
+        @Html.TextBox("TicketCategoryId")
+        @Html.ValidationMessage("TicketCategoryId", "*")
+    </p>
+    <p>
+        <label for="TicketSubCategoryId">Support Ticket Sub-Category:</label>
+        @Html.TextBox("TicketSubCategoryId")
+        @Html.ValidationMessage("TicketSubCategoryId", "*")
+    </p>
+    <p>
+        <input type="submit" value="Save"/>
+    </p>
+
+</div>
+}
